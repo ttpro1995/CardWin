@@ -1,6 +1,9 @@
 
 input_file<-file("input/cardwinlog9.csv")
-input_name<-c("data9")
+input_name<-c("9")
+
+
+do_something<-function(input_file,input_name){
 #input_file
 data<-read.csv(input_file)
 
@@ -83,3 +86,4 @@ name.pair<-paste(name.path,"pair",sep="/")
 name.pair<-paste(name.pair,input_name,sep="")
 name.pair<-paste(name.pair,"csv",sep=".")
 write.table(output.pair,file=name.pair,row.names=FALSE,sep=",")
+}
