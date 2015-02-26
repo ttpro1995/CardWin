@@ -2,7 +2,7 @@
 #APCS - 13CTT
 
 input_file<-file("input/cardwinlog9.csv")
-input_name<-c("data9")
+input_name<-c("9")
 #input_file
 data<-read.csv(input_file)
 
@@ -26,6 +26,10 @@ p3.win<-data[29]
 p4.pair<-data[[35]]
 p4.win<-data[36]
 
+
+p5.pair<-data[[42]]
+p5.win<-data[43]
+
 #generate data.frame of pair, win
 p0.data<-cbind(p0.win,p0.pair)
 p0.data.pairwin<-subset(p0.data,p0.data[1]=="1",row.name=FALSE)
@@ -47,6 +51,9 @@ p4.data<-cbind(p4.win,p4.pair)
 p4.data.pairwin<-subset(p4.data,p4.data[1]=="1",row.name=FALSE)
 p4.pairwin<-as.vector(p4.data.pairwin[[2]])
 
+p5.data<-cbind(p5.win,p5.pair)
+p5.data.pairwin<-subset(p5.data,p5.data[1]=="1",row.name=FALSE)
+p5.pairwin<-as.vector(p5.data.pairwin[[2]])
 
 #generate a table of freq
 
@@ -56,10 +63,11 @@ p1.pair.freq<-table(factor(p1.pair,level=0:3))
 p2.pair.freq<-table(factor(p2.pair,level=0:3))
 p3.pair.freq<-table(factor(p3.pair,level=0:3))
 p4.pair.freq<-table(factor(p4.pair,level=0:3))
+p5.pair.freq<-table(factor(p5.pair,level=0:3))
 
-pair<-cbind(p0.pair.freq,p1.pair.freq,p2.pair.freq,p3.pair.freq,p4.pair.freq)
+pair<-cbind(p0.pair.freq,p1.pair.freq,p2.pair.freq,p3.pair.freq,p4.pair.freq,p5.pair.freq)
 output.pair<-as.data.frame(pair)
-names(output.pair)<-c("player 0 get","player 1 get","player 2 get","player 3 get","player 4 get")
+names(output.pair)<-c("player 0 get","player 1 get","player 2 get","player 3 get","player 4 get","player 5 get")
 
 #freq of win by getting x pairs at beginning of round
 p0.pairwin.freq<-table(factor(p0.pairwin,level=0:3))
@@ -67,11 +75,12 @@ p1.pairwin.freq<-table(factor(p1.pairwin,level=0:3))
 p2.pairwin.freq<-table(factor(p2.pairwin,level=0:3))
 p3.pairwin.freq<-table(factor(p3.pairwin,level=0:3))
 p4.pairwin.freq<-table(factor(p4.pairwin,level=0:3))
+p5.pairwin.freq<-table(factor(p5.pairwin,level=0:3))
 
-pairwin<-cbind(p0.pairwin.freq,p1.pairwin.freq,p2.pairwin.freq,p3.pairwin.freq,p4.pairwin.freq)
+pairwin<-cbind(p0.pairwin.freq,p1.pairwin.freq,p2.pairwin.freq,p3.pairwin.freq,p4.pairwin.freq,p5.pairwin.freq)
 
 output.pairwin<-as.data.frame(pairwin)
-names(output.pairwin)<-c("player 0 win","player 1 win","player 2 win","player 3 win","player 4 win")
+names(output.pairwin)<-c("player 0 win","player 1 win","player 2 win","player 3 win","player 4 win","player 5 win")
 
 #Output file csv
 name.path<-c("output")
