@@ -1,3 +1,6 @@
+#Thai Thien
+#APCS - 13CTT
+
 source('D:/APCS/Stat/R-project/CardWin/function.R')
 #it will called function from function.R
 

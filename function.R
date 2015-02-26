@@ -1,6 +1,7 @@
+#Thai Thien
+#APCS - 13CTT
 
-input_file<-file("input/cardwinlog9.csv")
-input_name<-c("9")
+
 
 
 do_something<-function(input_file,input_name){
