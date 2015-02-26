@@ -60,7 +60,7 @@ p4.pair.freq<-table(factor(p4.pair,level=0:3))
 
 pair<-cbind(p0.pair.freq,p1.pair.freq,p2.pair.freq,p3.pair.freq,p4.pair.freq)
 output.pair<-as.data.frame(pair)
-names(output.pair)<-c("Number Of pairs","player 1 get","player 2 get","player 3 get","player 4 get")
+names(output.pair)<-c("player 0 get","player 1 get","player 2 get","player 3 get","player 4 get")
 
 #freq of win by getting x pairs at beginning of round
 p0.pairwin.freq<-table(factor(p0.pairwin,level=0:3))
@@ -72,7 +72,7 @@ p4.pairwin.freq<-table(factor(p4.pairwin,level=0:3))
 pairwin<-cbind(p0.pairwin.freq,p1.pairwin.freq,p2.pairwin.freq,p3.pairwin.freq,p4.pairwin.freq)
 
 output.pairwin<-as.data.frame(pairwin)
-names(output.pairwin)<-c("Number Of pairs","player 1 win","player 2 win","player 3 win","player 4 win")
+names(output.pairwin)<-c("player 0 win","player 1 win","player 2 win","player 3 win","player 4 win")
 
 #Output file csv
 name.path<-c("output")
